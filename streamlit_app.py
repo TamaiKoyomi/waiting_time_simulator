@@ -12,20 +12,15 @@ def menu():
     
 
 def count():
-    col1,col2 = st.columns
+    st.write('自分の後ろに1人(1グループ)並ぶ度に下のボタンを押してください。')
+    if st.button('人が来た'):
+        number += 1
 
-    with col1:
-        st.write('自分の後ろに1人(1グループ)並ぶ度に下のボタンを押してください。')
-        if st.button('人が来た'):
-            number += 1
+    st.write('現在ボタンを押した回数:' + str(number) + '回')
 
-        st.write('現在ボタンを押した回数:' + str(number) + '回')
+    if st.button('1人分取り消す'):
+        if number > 0:
+            number -= 1
 
-        if st.button('1人分取り消す'):
-            if number > 0:
-                number -= 1
-    
-    with col2:
-        st.write('ここに時間制限系のエフェクト')
 
 menu()
