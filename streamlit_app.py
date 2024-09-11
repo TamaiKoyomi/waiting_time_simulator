@@ -8,8 +8,7 @@ def menu():
     number = 0
     st.title('待ち時間シミュレーター')
     st.write('スタートボタンを押して、待ち時間をシミュレーションしてみましょう!')
-    if st.button('スタート'):
-        count()
+    
 
 def count():
     col1,col2 = st.columns
@@ -19,7 +18,7 @@ def count():
         if st.button('人が来た'):
             number += 1
 
-        st.write('現在ボタンを押した回数:' + str(number))
+        st.write('現在ボタンを押した回数:' + str(number) + '回')
 
         if st.button('1人分取り消す'):
             if number > 0:
@@ -29,3 +28,5 @@ def count():
         st.write('ここに時間制限系のエフェクト')
 
 menu()
+if st.button('スタート'):
+    count()
