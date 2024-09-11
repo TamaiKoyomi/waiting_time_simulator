@@ -22,4 +22,4 @@ def count():
             st.session_state.number -= 1
 
 
-count()
+menu()
