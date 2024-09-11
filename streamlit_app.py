@@ -5,7 +5,6 @@ import streamlit as st
 number = 0
 
 def menu():
-    number = 0
     st.title('待ち時間シミュレーター')
     st.write('スタートボタンを押して、待ち時間をシミュレーションしてみましょう!')
     
