@@ -27,5 +27,4 @@ def count():
         st.write('ここに時間制限系のエフェクト')
 
 #menu()
-if st.button('スタート'):
-    count()
+count()
