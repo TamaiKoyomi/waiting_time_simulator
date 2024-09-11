@@ -2,12 +2,14 @@ import streamlit as st
 
 #　メニューごとに関数設定　初期画面と待ちボタン画面とアンケート画面と結果画面
 
+screen = 0
 number = 0
 
 def menu():
-
     st.title('待ち時間シミュレーター')
     st.write('スタートボタンを押して、待ち時間をシミュレーションしてみましょう!')
+    if st.button('スタート'):
+        return screen == 1
     
 
 def count():
@@ -27,6 +29,7 @@ def count():
     #with col2:
         st.write('ここに時間制限系のエフェクト')
 
-menu()
-if st.button('スタート'):
+if screen == 0:
+    menu()
+elif screen == 1:
     count()
