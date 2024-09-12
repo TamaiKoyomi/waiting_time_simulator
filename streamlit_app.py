@@ -2,10 +2,8 @@ import streamlit as st
 
 #　メニューごとに関数設定　初期画面と待ちボタン画面とアンケート画面と結果画面
 
-st.session_state.number = 0
 
 def menu():
-
     col1,col2 = st.columns
 
     with col1:
@@ -23,5 +21,5 @@ def menu():
         if st.session_state.number > 0:
             st.session_state.number -= 1
 
-
-menu()
+if st.button('でばっぐ'):
+    menu()
