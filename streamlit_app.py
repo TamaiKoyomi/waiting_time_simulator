@@ -8,8 +8,9 @@ def menu():
     #col1,col2 = st.columns
 
     #with col1:
-
+    
     st.session_state.number = number
+
     st.title('待ち時間シミュレーター')
     st.write('スタートボタンを押して、待ち時間をシミュレーションしてみましょう!')
     
