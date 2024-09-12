@@ -4,7 +4,7 @@ import streamlit as st
 
 def menu():
 
-    col1,col2 = st.colmuns
+    col1,col2 = st.columns
 
     with col1:
         st.session_state.number = 0
