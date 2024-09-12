@@ -4,21 +4,21 @@ import streamlit as st
 
 
 def menu():
-    col1,col2 = st.columns
+    #col1,col2 = st.columns
 
-    with col1:
-        st.title('待ち時間シミュレーター')
-        st.write('スタートボタンを押して、待ち時間をシミュレーションしてみましょう!')
+    #with col1:
+    st.title('待ち時間シミュレーター')
+    st.write('スタートボタンを押して、待ち時間をシミュレーションしてみましょう!')
     
-    with col2:
-        st.write('自分の後ろに1人(1グループ)並ぶ度に下のボタンを押してください。')
-        if st.button('人が来た'):
-            st.session_state.number += 1
+    #with col2:
+    st.write('自分の後ろに1人(1グループ)並ぶ度に下のボタンを押してください。')
+    if st.button('人が来た'):
+        st.session_state.number += 1
 
-        st.write('現在ボタンを押した回数:' + str(st.session_state.number) + '回')
+    st.write('現在ボタンを押した回数:' + str(st.session_state.number) + '回')
 
-        if st.button('1人分取り消す'):
-            if st.session_state.number > 0:
-                st.session_state.number -= 1
+    if st.button('1人分取り消す'):
+        if st.session_state.number > 0:
+            st.session_state.number -= 1
 
 menu()
