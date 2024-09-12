@@ -2,6 +2,8 @@ import streamlit as st
 
 #　メニューごとに関数設定　初期画面と待ちボタン画面とアンケート画面と結果画面
 
+number = 0
+st.session_state.number = number
 
 def menu():
     #col1,col2 = st.columns
