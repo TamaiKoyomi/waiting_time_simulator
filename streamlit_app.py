@@ -11,13 +11,13 @@ def menu():
     st.write('スタートボタンを押して、待ち時間をシミュレーションしてみましょう!')
     
     #with col2:
-    st.write('自分の後ろに1人(1グループ)並ぶ度に下のボタンを押してください。')
-    if st.button('人が来た'):
+    st.write('時間いっぱい、1グループ進むたびに以下のボタンを押してください。')
+    if st.button('進んだ'):
         st.session_state.number += 1
 
     st.write('現在ボタンを押した回数:' + str(st.session_state.number) + '回')
 
-    if st.button('1人分取り消す'):
+    if st.button('1グループ分取り消す'):
         if st.session_state.number > 0:
             st.session_state.number -= 1
 
