@@ -21,3 +21,4 @@ def menu():
             if st.session_state.number > 0:
                 st.session_state.number -= 1
 
+menu()
