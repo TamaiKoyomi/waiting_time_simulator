@@ -17,9 +17,7 @@ def menu():
 
         st.write('現在ボタンを押した回数:' + str(st.session_state.number) + '回')
 
-    if st.button('1人分取り消す'):
-        if st.session_state.number > 0:
-            st.session_state.number -= 1
+        if st.button('1人分取り消す'):
+            if st.session_state.number > 0:
+                st.session_state.number -= 1
 
-if st.button('でばっぐ'):
-    menu()
