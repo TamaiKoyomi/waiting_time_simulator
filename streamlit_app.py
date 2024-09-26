@@ -1,6 +1,5 @@
 import streamlit as st
-import time
-from time import sleep
+import asyncio
 
 #　メニューごとに関数設定　初期画面と待ちボタン画面とアンケート画面と結果画面
 
@@ -14,13 +13,13 @@ def menu():
 
     #with col1:
 
-    target_time = 60
+    
 
-    def up_timer(secs):
-        for i in range(secs, -1, -1):
-            print(i)
-            sleep(1)
-    print("時間です！")
+    async def async_timer(seconds):
+        print(f'非同期タイマー開始：{seconds}秒')
+        await asyncio.sleep(seconds)
+        print(f'非同期タイマー終了：{seconds}秒')
+
 
     st.title('待ち時間シミュレーター')
     st.write('スタートボタンを押して、待ち時間をシミュレーションしてみましょう!')
@@ -29,8 +28,8 @@ def menu():
     st.write('時間いっぱい、1グループ進むたびに以下のボタンを押してください。')
     
     if st.button('1分間タイマースタート'):
-        up_timer(target_time)
-        
+        asyncio.run(async_timer(5))
+
     if st.button('進んだ'):
         st.session_state.number += 1
 
