@@ -34,7 +34,8 @@ def menu():
     
     if st.button('1分間タイマースタート'):
         t1.start()
-
+        t1.join()
+        
     if st.button('進んだ'):
         st.session_state.number += 1
 
