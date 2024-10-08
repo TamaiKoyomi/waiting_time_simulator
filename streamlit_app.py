@@ -15,11 +15,6 @@ def menu():
 
     
 
-    async def async_timer(seconds):
-        print(f'非同期タイマー開始：{seconds}秒')
-        await asyncio.sleep(seconds)
-        print(f'非同期タイマー終了：{seconds}秒')
-
 
     st.title('待ち時間シミュレーター')
     st.write('スタートボタンを押して、待ち時間をシミュレーションしてみましょう!')
@@ -27,9 +22,6 @@ def menu():
     #with col2:
     st.write('時間いっぱい、1グループ進むたびに以下のボタンを押してください。')
     
-    if st.button('1分間タイマースタート'):
-        asyncio.run(async_timer(5))
-
     if st.button('進んだ'):
         st.session_state.number += 1
 
