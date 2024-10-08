@@ -1,14 +1,13 @@
 import streamlit as st
 import asyncio
 import threading
-import time
 
-# Initialize session state for number
+# セッションステートの初期化
 if 'number' not in st.session_state:
     st.session_state.number = 0
 
 def async_timer(seconds):
-    """Function to run the async timer within the thread."""
+    """スレッド内で実行するための関数"""
     asyncio.run(async_timer_inner(seconds))
 
 async def async_timer_inner(seconds):
@@ -24,7 +23,7 @@ def menu():
 
     if st.button('1分間タイマースタート'):
         t1 = threading.Thread(target=async_timer, args=(60,))
-        t1.start()  # Start the thread
+        t1.start()  # スレッドを開始
 
     if st.button('進んだ'):
         st.session_state.number += 1
