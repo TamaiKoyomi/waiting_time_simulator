@@ -1,5 +1,5 @@
 import streamlit as st
-import asyncio
+from time import sleep
 import threading
 import time
 
@@ -9,6 +9,8 @@ number = 0
 if 'number' not in st.session_state:
     st.session_state.number = number
 
+target_time = 10
+
 def menu():
 
     #col1,col2 = st.columns
@@ -16,13 +18,13 @@ def menu():
     #with col1:
 
     
+    def down_timer(secs):
+        for i in range(secs,-1, -1):
+            print(i)
+            sleep(1)
+        print("時間です！")
 
-    async def async_timer(seconds):
-        print(f'非同期タイマー開始：{seconds}秒')
-        await asyncio.sleep(seconds)
-        print(f'非同期タイマー終了：{seconds}秒')
-
-    t1 = threading.Thread(target=async_timer, args=("t1",))
+    t1 = threading.Thread(target=down_timer, args=("t1",))
 
     st.title('待ち時間シミュレーター')
     st.write('スタートボタンを押して、待ち時間をシミュレーションしてみましょう!')
@@ -31,7 +33,7 @@ def menu():
     st.write('時間いっぱい、1グループ進むたびに以下のボタンを押してください。')
     
     if st.button('1分間タイマースタート'):
-        asyncio.run(t1(5))
+        t1.start()
 
     if st.button('進んだ'):
         st.session_state.number += 1
