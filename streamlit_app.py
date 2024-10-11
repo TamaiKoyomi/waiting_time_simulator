@@ -37,6 +37,7 @@ def front_bef():
         st.write(f"かかった時間:{elapsed:.2f}秒")
         st.write('次のページへ遷移します!')
         time.sleep(1)
+        st.session_state.d = False
         st.session_state.screen = 2
 
 if 'screen' not in st.session_state:
