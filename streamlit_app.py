@@ -15,22 +15,27 @@ def front_bef():
         st.session_state.elapsed_time = 0
 
     if st.button('スタート'):
+        st.session_state.d = False
         st.session_state.start_time = time.time()
         st.session_state.elapsed_time = 0
     
     if st.session_state.start_time is not None:
         elapsed = st.session_state.elapsed_time + (time.time() - st.session_state.start_time)
+        st.write('3グループ目が進むまで、しばしお待ちください……')
     else:
         elapsed = st.session_state.elapsed_time
 
     if st.button('ストップ'):
         if st.session_state.start_time is not None:
+            st.session_state.d = True
             st.session_state.elapsed_time += time.time() - st.session_state.start_time
             st.session_state.start_time = None
             st.session_state.inf = elapsed
-        st.write(f"かかった時間時間:{elapsed:.2f}秒")
-        st.write('この秒数でよろしいですか?')
+
+    if st.session_state.d == True:
         if st.button('はい'):
+            st.write(f"かかった時間時間:{elapsed:.2f}秒")
+            st.write('この秒数でよろしいですか?')
             st.session_state.screen == 2
 
 if 'screen' not in st.session_state:
