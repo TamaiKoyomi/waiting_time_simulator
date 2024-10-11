@@ -36,9 +36,8 @@ def front_bef():
     if st.session_state.d == True:
         st.write(f"かかった時間:{elapsed:.2f}秒")
         st.write('次のページへ遷移してもよろしいですか?')
-        if st.button('はい'):
-            st.session_state.d = False
-            st.session_state.screen = 2
+        st.session_state.d = False
+        st.session_state.screen = 2
 
 if 'screen' not in st.session_state:
     st.session_state.screen = 0
