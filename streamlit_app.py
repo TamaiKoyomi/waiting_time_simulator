@@ -41,23 +41,23 @@ else:
 
 st.write(f"経過時間:{elapsed:.2f}秒")
 
-'''def menu():
-    st.title('待ち時間シミュレーター')
-    st.write('スタートボタンを押して、待ち時間をシミュレーションしてみましょう!')
+# def menu():
+#    st.title('待ち時間シミュレーター')
+#    st.write('スタートボタンを押して、待ち時間をシミュレーションしてみましょう!')
 
-    st.write('時間いっぱい、1グループ進むたびに以下のボタンを押してください。')
+#    st.write('時間いっぱい、1グループ進むたびに以下のボタンを押してください。')
 
-    if st.button('1分間タイマースタート'):
-        t1 = threading.Thread(target=async_timer, args=(60,))
-        t1.start()  # スレッドを開始
+ #   if st.button('1分間タイマースタート'):
+#        t1 = threading.Thread(target=async_timer, args=(60,))
+#        t1.start()  # スレッドを開始
 
-    if st.button('進んだ'):
-        st.session_state.number += 1
+ #   if st.button('進んだ'):
+#        st.session_state.number += 1
 
-    st.write('現在ボタンを押した回数: ' + str(st.session_state.number) + '回')
+#    st.write('現在ボタンを押した回数: ' + str(st.session_state.number) + '回')
 
-    if st.button('1グループ分取り消す'):
-        if st.session_state.number > 0:
-            st.session_state.number -= 1
+#    if st.button('1グループ分取り消す'):
+#        if st.session_state.number > 0:
+#            st.session_state.number -= 1
 
-menu()'''
+#menu()'''
