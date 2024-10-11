@@ -40,4 +40,4 @@ if st.session_state.screen == 0:
 elif st.session_state.screen == 1:
     front_bef()
 elif st.session_state.screen == 2:
-    st.write('うわあああ')
+    st.write('ご回答ありがとうございます!')
