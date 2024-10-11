@@ -1,8 +1,10 @@
 import streamlit as st
-import asyncio
-import threading
+import time
 
-# セッションステートの初期化
+# import asyncio
+# import threading
+
+'''# セッションステートの初期化
 if 'number' not in st.session_state:
     st.session_state.number = 0
 
@@ -13,9 +15,31 @@ def async_timer(seconds):
 async def async_timer_inner(seconds):
     print(f'非同期タイマー開始：{seconds}秒')
     await asyncio.sleep(seconds)
-    print(f'非同期タイマー終了：{seconds}秒')
+    print(f'非同期タイマー終了：{seconds}秒')'''
 
-def menu():
+if 'start_time' not in st.session_state:
+    st.session_state.start_time = None
+    st.session_state.elapsed_time = 0
+
+if st.button('スタート'):
+    st.session_state.start_time = time.time()
+    st.session_state.elapsed_time = 0
+
+st.write('デバッグ'+st.session_state.start_time)
+
+if st.button('ストップ'):
+    if st.session_state.start_time is not None:
+        st.session_state.elapsed_time += time.time() - st.session_state.start_time
+        st.session_state.start_time = None
+
+if st.session_state.start_time is not None:
+    elapsed = st.session_state.elapsed_time + (time.time() - st.session_state.start_time)
+else:
+    elapsed = st.session_state.elapsed_time
+
+st.write(f"経過時間:{elapsed:.2f}秒")
+
+'''def menu():
     st.title('待ち時間シミュレーター')
     st.write('スタートボタンを押して、待ち時間をシミュレーションしてみましょう!')
 
@@ -34,4 +58,4 @@ def menu():
         if st.session_state.number > 0:
             st.session_state.number -= 1
 
-menu()
+menu()'''
