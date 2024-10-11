@@ -4,18 +4,20 @@ import time
 # import asyncio
 # import threading
 
-'''# セッションステートの初期化
-if 'number' not in st.session_state:
-    st.session_state.number = 0
+st.title('待ち時間シミュレーター')
 
-def async_timer(seconds):
-    """スレッド内で実行するための関数"""
-    asyncio.run(async_timer_inner(seconds))
+# セッションステートの初期化
+# if 'number' not in st.session_state:
+#    st.session_state.number = 0
 
-async def async_timer_inner(seconds):
-    print(f'非同期タイマー開始：{seconds}秒')
-    await asyncio.sleep(seconds)
-    print(f'非同期タイマー終了：{seconds}秒')'''
+#def async_timer(seconds):
+#    """スレッド内で実行するための関数"""
+#    asyncio.run(async_timer_inner(seconds))
+
+# async def async_timer_inner(seconds):
+#    print(f'非同期タイマー開始：{seconds}秒')
+#    await asyncio.sleep(seconds)
+#    print(f'非同期タイマー終了：{seconds}秒')
 
 if 'start_time' not in st.session_state:
     st.session_state.start_time = None
