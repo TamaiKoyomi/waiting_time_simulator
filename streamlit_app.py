@@ -25,7 +25,7 @@ if st.button('スタート'):
     st.session_state.start_time = time.time()
     st.session_state.elapsed_time = 0
 
-st.write('デバッグ'+st.session_state.start_time)
+st.write('デバッグ'+str(st.session_state.start_time))
 
 if st.button('ストップ'):
     if st.session_state.start_time is not None:
