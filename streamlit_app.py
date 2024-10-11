@@ -11,7 +11,7 @@ def menu():
 def front_bef():
     st.write('スタートボタンを押してから、3グループ分進んだらストップボタンを押してください。')
     st.session_state.d = False
-    
+
     if 'start_time' not in st.session_state:
         st.session_state.start_time = None
         st.session_state.elapsed_time = 0
@@ -34,9 +34,9 @@ def front_bef():
             st.session_state.inf = elapsed
 
     if st.session_state.d == True:
+        st.write(f"かかった時間:{elapsed:.2f}秒")
+        st.write('この秒数でよろしいですか?')
         if st.button('はい'):
-            st.write(f"かかった時間時間:{elapsed:.2f}秒")
-            st.write('この秒数でよろしいですか?')
             st.session_state.screen == 2
 
 if 'screen' not in st.session_state:
