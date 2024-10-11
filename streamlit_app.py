@@ -22,14 +22,14 @@ def front_bef():
         if st.session_state.start_time is not None:
             st.session_state.elapsed_time += time.time() - st.session_state.start_time
             st.session_state.start_time = None
-
-    if st.session_state.start_time is not None:
-        elapsed = st.session_state.elapsed_time + (time.time() - st.session_state.start_time)
-        st.session_state.inf = elapsed
+            st.session_state.inf = elapsed
         st.write(f"かかった時間時間:{elapsed:.2f}秒")
         st.write('この秒数でよろしいですか?')
         if st.button('はい'):
             st.session_state.screen ==2
+
+    if st.session_state.start_time is not None:
+        elapsed = st.session_state.elapsed_time + (time.time() - st.session_state.start_time)
     else:
         elapsed = st.session_state.elapsed_time
 
