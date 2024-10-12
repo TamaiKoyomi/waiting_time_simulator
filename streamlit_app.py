@@ -61,8 +61,8 @@ def cal():
     st.write(st.session_state.inf)
     st.write(st.session_state.back)
 
-    st.session_state.u = 180 / st.session_state.inf
-    l = 180 / st.session_state.back
+    st.session_state.u = st.session_state.inf / 180
+    l = st.session_state.back / 180
     
     r = l / st.session_state.u
     bunbo = 1-r
@@ -74,7 +74,7 @@ def cal():
     if r >= 1:
         st.session_state.screen = 4
     elif result < 1:
-        st.write('この列の平均待ち時間 約1分')
+        st.write('この列の平均待ち時間 ' + result + '秒')
     else:
         st.write('この列の平均待ち時間 ' + str(result) + '秒')
 
