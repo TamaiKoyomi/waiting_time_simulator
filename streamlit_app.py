@@ -61,6 +61,15 @@ def cal():
     st.write(st.session_state.inf)
     st.write(st.session_state.back)
 
+    r = st.session_state.back / st.session_state.inf
+    bunbo = 1-r
+    left = r / bunbo
+    right = 1 / st.session_state.inf
+
+    result = left * right
+
+    st.write('待ち時間 約' + str(result) + '分')
+
 if 'screen' not in st.session_state:
     st.session_state.screen = 0
 
