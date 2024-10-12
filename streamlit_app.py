@@ -71,4 +71,4 @@ elif st.session_state.screen == 1:
 elif st.session_state.screen == 2:
     back_bef()
 elif st.session_state.screen == 3:
-    st.write('計算結果の処理ページ')
+    cal()
