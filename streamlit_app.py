@@ -68,7 +68,13 @@ def cal():
 
     result = left * right
 
-    st.write('待ち時間 約' + str(result) + '分')
+    time = result / 60
+
+    if time < 1:
+        st.write('この列の平均待ち時間 約1分')
+    else:
+        st.write('この列の平均待ち時間 ' + str(time) + '分')
+
 
 if 'screen' not in st.session_state:
     st.session_state.screen = 0
