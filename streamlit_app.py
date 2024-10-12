@@ -56,6 +56,11 @@ def back_bef():
             st.session_state.back = elapsed
             st.session_state.screen = 3
 
+def cal():
+    st.write('計算結果')
+    st.write(st.session_state.inf)
+    st.write(st.session_state.back)
+
 if 'screen' not in st.session_state:
     st.session_state.screen = 0
 
