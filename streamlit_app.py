@@ -61,20 +61,21 @@ def cal():
     st.write(st.session_state.inf)
     st.write(st.session_state.back)
 
-    r = st.session_state.back / st.session_state.inf
+    l = st.session_state.back / 180
+    u = st.session_state.inf / 180
+    r = l / u
     bunbo = 1-r
     left = r / bunbo
-    right = 1 / st.session_state.inf
+    right = 1 / u
 
     result = left * right
 
-    time = result / 60
-
-    if time < 1:
+    if r >= 1:
+        st.session_state.screen = 4
+    elif result < 1:
         st.write('この列の平均待ち時間 約1分')
     else:
         st.write('この列の平均待ち時間 ' + str(time) + '分')
-
 
 if 'screen' not in st.session_state:
     st.session_state.screen = 0
@@ -87,3 +88,5 @@ elif st.session_state.screen == 2:
     back_bef()
 elif st.session_state.screen == 3:
     cal()
+elif st.session_state.screen == 4:
+    st.write('発散プログラム')
