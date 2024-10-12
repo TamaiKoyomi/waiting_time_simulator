@@ -61,8 +61,9 @@ def cal():
     st.write(st.session_state.inf)
     st.write(st.session_state.back)
 
-    l = st.session_state.back / 3
-    st.session_state.u = st.session_state.inf / 3
+    st.session_state.u = 180 / st.session_state.inf
+    l = 180 / st.session_state.back
+    
     r = l / st.session_state.u
     bunbo = 1-r
     left = r / bunbo
@@ -75,7 +76,7 @@ def cal():
     elif result < 1:
         st.write('この列の平均待ち時間 約1分')
     else:
-        st.write('この列の平均待ち時間 ' + str(time) + '秒')
+        st.write('この列の平均待ち時間 ' + str(result) + '秒')
 
 def number():
     st.write('今何グループ並んでいますか?')
