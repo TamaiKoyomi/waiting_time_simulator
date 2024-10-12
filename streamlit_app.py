@@ -61,12 +61,12 @@ def cal():
     st.write(st.session_state.inf)
     st.write(st.session_state.back)
 
-    l = st.session_state.back / 180
-    u = st.session_state.inf / 180
-    r = l / u
+    l = st.session_state.back / 3
+    st.session_state.u = st.session_state.inf / 3
+    r = l / st.session_state.u
     bunbo = 1-r
     left = r / bunbo
-    right = 1 / u
+    right = 1 / st.session_state.u
 
     result = left * right
 
@@ -75,7 +75,15 @@ def cal():
     elif result < 1:
         st.write('この列の平均待ち時間 約1分')
     else:
-        st.write('この列の平均待ち時間 ' + str(time) + '分')
+        st.write('この列の平均待ち時間 ' + str(time) + '秒')
+
+def number():
+    st.write('今何グループ並んでいますか?')
+    population = st.number_input('Input any number', 0)
+    time = st.session_state.u * population
+
+    st.write('この列の待ち時間 約'+ time + '秒')
+
 
 if 'screen' not in st.session_state:
     st.session_state.screen = 0
