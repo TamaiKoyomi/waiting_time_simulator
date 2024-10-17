@@ -90,7 +90,9 @@ def cal():
 def number():
     st.write('今何グループ並んでいますか?')
     population = st.number_input('Input any number', 0)
-    time = st.session_state.u * population
+
+    half = population / 2
+    time = st.session_state.u * half
 
     st.write('この列の待ち時間 約'+ str(time) + '秒')
 
