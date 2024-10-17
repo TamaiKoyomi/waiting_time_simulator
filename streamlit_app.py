@@ -92,7 +92,7 @@ def number():
     population = st.number_input('Input any number', 0)
     time = st.session_state.u * population
 
-    st.write('この列の待ち時間 約'+ time + '秒')
+    st.write('この列の待ち時間 約'+ str(time) + '秒')
 
 def hassan():
     st.write('発散プログラム')
