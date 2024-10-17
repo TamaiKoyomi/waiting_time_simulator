@@ -83,7 +83,7 @@ def cal():
     if r >= 1:
         st.session_state.screen = 4
     if result < 1:
-        st.write('この列の平均待ち時間 ' + result + '秒')
+        st.write('この列の平均待ち時間 ' + str(result) + '秒')
     else:
         st.write('この列の平均待ち時間 ' + str(result) + '秒')
 
