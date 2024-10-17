@@ -88,6 +88,8 @@ def cal():
         st.write('この列の平均待ち時間: ' + str(result) + '秒')
 
 def number():
+    st.write('発散プログラム')
+    st.write('待ち行列理論が適用できないためほかの方法で待ち時間を算出します')
     st.write('今何グループ並んでいますか?')
     population = st.number_input('Input any number', 0)
 
@@ -96,11 +98,38 @@ def number():
 
     st.write('この列の待ち時間 約'+ str(time) + '秒')
 
-def hassan():
-    st.write('発散プログラム')
-    st.write('待ち行列理論が適用できないためほかの方法で待ち時間を算出します')
+def inf_aft():
+    st.write('スタートボタンを押してから、3グループ分進んだらストップボタンを押してください。')
 
-    number()
+    if 'start_time' not in st.session_state:
+        st.session_state.start_time = None
+        st.session_state.elapsed_time = 0
+
+    if st.button('スタート'):
+        st.session_state.start_time = time.time()
+        st.session_state.elapsed_time = 0
+    
+    if st.session_state.start_time is not None:
+        elapsed = st.session_state.elapsed_time + (time.time() - st.session_state.start_time)
+        st.write('3グループ目が進むまで、しばしお待ちください……')
+    else:
+        elapsed = st.session_state.elapsed_time
+
+    if st.button('ストップ'):
+        if st.session_state.start_time is not None:
+            st.session_state.elapsed_time += time.time() - st.session_state.start_time
+            st.session_state.start_time = None
+            st.session_state.inf = elapsed
+            st.session_state.screen = 6
+
+def num_aft():
+    st.write('今何グループ並んでいますか?')
+    population = st.number_input('Input any number', 0)
+
+    half = population / 2
+    time = st.session_state.u * half
+
+    st.write('この列の待ち時間 約'+ str(time) + '秒')
 
 if 'screen' not in st.session_state:
     st.session_state.screen = 0
@@ -114,6 +143,8 @@ elif st.session_state.screen == 2:
 elif st.session_state.screen == 3:
     cal()
 elif st.session_state.screen == 4:
-    hassan()
+    number()
 elif st.session_state.screen == 5:
-    st.write('うわあああああ')
+    inf_aft()
+elif st.session_state.screen == 6:
+    num_aft()
