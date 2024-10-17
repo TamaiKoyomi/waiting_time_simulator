@@ -4,9 +4,18 @@ import time
 st.title('待ち時間シミュレーター')
 
 def menu():
+    
     st.write('並ぶ前に何分くらい待つのか知りたいですか? それとも、今並んでいる行列があと何分で自分の番になるのか知りたいですか?')
-    if st.button('前'):
-        st.session_state.screen = 1
+
+    col1 , col2 = st.columns
+
+    with col1:
+        if st.button('前'):
+            st.session_state.screen = 1
+
+    with col2:
+        if st.button('後'):
+            st.session_state.screen = 5
 
 def front_bef():
     st.write('スタートボタンを押してから、3グループ分進んだらストップボタンを押してください。')
@@ -106,3 +115,5 @@ elif st.session_state.screen == 3:
     cal()
 elif st.session_state.screen == 4:
     hassan()
+elif st.session_state.screen == 5:
+    st.write('うわあああああ')
