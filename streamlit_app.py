@@ -7,7 +7,7 @@ def menu():
     
     st.write('並ぶ前に何分くらい待つのか知りたいですか? それとも、今並んでいる行列があと何分で自分の番になるのか知りたいですか?')
 
-    col1 , col2 = st.columns
+    col1 , col2 = st.columns(2)
 
     with col1:
         if st.button('前'):
