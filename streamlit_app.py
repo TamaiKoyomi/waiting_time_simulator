@@ -123,6 +123,8 @@ def inf_aft():
             st.session_state.screen = 6
 
 def num_aft():
+    st.session_state.u = st.session_state.inf / 180
+    
     st.write('今何グループ並んでいますか?')
     population = st.number_input('Input any number', 0)
 
