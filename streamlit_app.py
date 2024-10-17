@@ -83,9 +83,9 @@ def cal():
     if r >= 1:
         st.session_state.screen = 4
     if result < 1:
-        st.write('この列の平均待ち時間 ' + str(result) + '秒')
+        st.write('この列の平均待ち時間: ' + str(result) + '秒')
     else:
-        st.write('この列の平均待ち時間 ' + str(result) + '秒')
+        st.write('この列の平均待ち時間: ' + str(result) + '秒')
 
 def number():
     st.write('今何グループ並んでいますか?')
@@ -97,10 +97,8 @@ def number():
 def hassan():
     st.write('発散プログラム')
     st.write('待ち行列理論が適用できないためほかの方法で待ち時間を算出します')
-    u = st.session_state.inf / 180
-    l = st.session_state.back / 180
-    result = l / u
-    st.write('この列の平均待ち時間 ' + str(result) + '秒')
+
+    number()
 
 if 'screen' not in st.session_state:
     st.session_state.screen = 0
