@@ -80,6 +80,8 @@ def cal():
 
     result = int(left * right)
 
+    st.write(left * right)
+
     if r >= 1:
         st.session_state.screen = 4
     if result < 1:
