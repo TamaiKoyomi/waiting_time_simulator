@@ -94,9 +94,9 @@ def number():
     population = st.number_input('Input any number', 0)
 
     half = population / 2
-    time = st.session_state.u * half
+    time = int(st.session_state.u * half)
 
-    st.write('この列の待ち時間 約'+ str(time) + '秒')
+    st.title('この列の待ち時間 約'+ str(time) + '秒')
 
 def inf_aft():
     st.write('スタートボタンを押してから、3グループ分進んだらストップボタンを押してください。')
@@ -129,9 +129,9 @@ def num_aft():
     population = st.number_input('Input any number', 0)
 
     half = population / 2
-    time = st.session_state.u * half
+    time = int(st.session_state.u * half)
 
-    st.write('この列の待ち時間 約'+ str(time) + '秒')
+    st.title('この列の待ち時間 約'+ str(time) + '秒')
 
 if 'screen' not in st.session_state:
     st.session_state.screen = 0
