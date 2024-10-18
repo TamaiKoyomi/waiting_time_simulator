@@ -94,7 +94,7 @@ def number():
     half = population / 2
     time = int(st.session_state.u * half)
 
-    st.title('この列の待ち時間 約'+ str(time) + '秒')
+    st.title('この列の待ち時間:約'+ str(time) + '秒')
 
 def inf_aft():
     st.write('スタートボタンを押してから、3グループ分進んだらストップボタンを押してください。')
