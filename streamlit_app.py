@@ -146,7 +146,7 @@ elif st.session_state.screen == 2:
 elif st.session_state.screen == 3:
     cal()
 elif st.session_state.screen == 4:
-    st.write('hassann')
+    number()
 elif st.session_state.screen == 5:
     inf_aft()
 elif st.session_state.screen == 6:
