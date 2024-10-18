@@ -78,7 +78,7 @@ def cal():
     left = r / bunbo
     right = 1 / st.session_state.u
 
-    result = left * right
+    result = int(left * right)
 
     if r >= 1:
         st.session_state.screen = 4
@@ -91,7 +91,7 @@ def number():
     st.write('発散プログラム')
     st.write('待ち行列理論が適用できないためほかの方法で待ち時間を算出します')
     st.write('今何グループ並んでいますか?')
-    population = st.number_input('Input any number', 0)
+    population = st.number_input('Input any number…', 0)
 
     half = population / 2
     time = int(st.session_state.u * half)
@@ -126,7 +126,7 @@ def num_aft():
     st.session_state.u = st.session_state.inf / 180
     
     st.write('今何グループ並んでいますか?')
-    population = st.number_input('Input any number', 0)
+    population = st.number_input('Input any number…', 0)
 
     half = population / 2
     time = int(st.session_state.u * half)
