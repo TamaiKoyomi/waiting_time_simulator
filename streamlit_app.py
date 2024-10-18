@@ -82,10 +82,8 @@ def cal():
 
     if st.session_state.u < l:
         st.session_state.screen = 4
-    if result < 1:
-        st.write('この列の平均待ち時間: ' + str(result) + '秒')
-    else:
-        st.write('この列の平均待ち時間: ' + str(result) + '秒')
+    
+    st.write('この列の平均待ち時間: ' + str(result) + '秒')
 
 def number():
     st.write('発散プログラム')
