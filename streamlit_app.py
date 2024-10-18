@@ -81,7 +81,7 @@ def cal():
     result = int(left * right)
 
     if st.session_state.u < l:
-        st.session_state.screen == 4
+        st.session_state.screen = 4
     else:
         st.write('この列の平均待ち時間: ' + str(result) + '秒')
 
