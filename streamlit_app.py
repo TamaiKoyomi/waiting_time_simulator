@@ -63,7 +63,13 @@ def back_bef():
             st.session_state.elapsed_time += time.time() - st.session_state.start_time
             st.session_state.start_time = None
             st.session_state.back = elapsed
-            st.session_state.screen = 3
+
+            l = st.session_state.back / 180
+
+            if st.session_state.u < l:
+                st.session_state.screen = 4
+            else:
+                st.session_state.screen = 3
 
 def cal():
     st.write('計算結果')
@@ -80,10 +86,7 @@ def cal():
 
     result = int(left * right)
 
-    if st.session_state.u < l:
-        st.session_state.screen = 4
-    else:
-        st.title('この列の平均待ち時間: ' + str(result) + '秒')
+    st.title('この列の平均待ち時間: ' + str(result) + '秒')
 
 def number():
     st.write('発散プログラム')
