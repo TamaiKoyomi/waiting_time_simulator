@@ -65,6 +65,7 @@ def back_bef():
             st.session_state.back = elapsed
 
             l = st.session_state.back / 180
+            st.session_state.u = st.session_state.inf / 180
 
             if st.session_state.u < l:
                 st.session_state.screen = 4
