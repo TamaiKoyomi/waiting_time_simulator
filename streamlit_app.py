@@ -100,6 +100,15 @@ def number():
     st.write('今何グループ並んでいますか?')
     population = st.number_input('Input any number…', 0)
 
+    st.write('inf_back_fact')
+    st.write(st.session_state.inf)
+    st.write(st.session_state.back)
+
+    st.write('じっさいのところどうでした?')
+    st.number_input('Input any number…', 0)
+
+    st.write('スクショしてね')
+
     half = population / 2
     time = int(st.session_state.u * half)
 
@@ -134,6 +143,15 @@ def num_aft():
     
     st.write('今何グループ並んでいますか?')
     population = st.number_input('Input any number…', 0)
+
+    st.write('inf_back_fact')
+    st.write(st.session_state.inf)
+    st.write(st.session_state.back)
+
+    st.write('じっさいのところどうでした?')
+    st.number_input('Input any number…', 0)
+
+    st.write('スクショしてね')
 
     half = population / 2
     time = int(st.session_state.u * half)
