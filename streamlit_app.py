@@ -73,9 +73,14 @@ def back_bef():
                 st.session_state.screen = 3
 
 def cal():
-    st.write('計算結果')
+    st.write('inf_back_fact')
     st.write(st.session_state.inf)
     st.write(st.session_state.back)
+
+    st.write('じっさいのところどうでした?')
+    st.number_input('Input any number…', 0)
+
+    st.write('スクショしてね')
 
     st.session_state.u = st.session_state.inf / 180
     l = st.session_state.back / 180
