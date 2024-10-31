@@ -118,8 +118,10 @@ def number():
     time = int(st.session_state.u * half)
     minute = int(time / 60)
 
-    st.title('この列の待ち時間:約'+ str(time) + '秒')
-    st.title('この列の待ち時間 約'+ str(minute) + '秒')
+    if time < 60:
+        st.title('この列の待ち時間:約'+ str(time) + '秒')
+    else:
+        st.title('この列の待ち時間 約'+ str(minute) + '秒')
 
 def inf_aft():
     st.write('スタートボタンを押してから、3グループ分進んだらストップボタンを押してください。')
