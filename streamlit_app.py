@@ -5,16 +5,16 @@ st.title('待ち時間シミュレーター')
 
 def menu():
     
-    st.write('この行列の平均待ち時間を知りたい人は1を、今並んだ場合の待ち時間を知りたい人は2を押してください。')
+    st.write('選んでください。')
 
     col1 , col2 = st.columns(2)
 
     with col1:
-        if st.button('1'):
+        if st.button('行列の平均待ち時間を知りたい'):
             st.session_state.screen = 1
 
     with col2:
-        if st.button('2'):
+        if st.button('今並んだ場合の待ち時間を知りたい'):
             st.session_state.screen = 5
 
 def front_bef():
