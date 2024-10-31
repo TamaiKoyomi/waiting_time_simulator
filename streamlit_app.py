@@ -110,7 +110,7 @@ def number():
     st.write(st.session_state.back)
 
     st.write('実際は何秒かかりましたか?')
-    st.number_input('Input any number…', 0)
+    st.number_input('Input', 0)
 
     st.write('スクショしてね')
 
