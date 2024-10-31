@@ -157,7 +157,7 @@ def num_aft():
     st.write(st.session_state.inf)
     st.write(st.session_state.back)
 
-    st.number_input('Input any number…', 0)
+    st.number_input('Input', 0)
 
     half = population / 2
     time = int(st.session_state.u * half)
