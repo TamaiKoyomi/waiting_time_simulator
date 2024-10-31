@@ -73,11 +73,12 @@ def back_bef():
                 st.session_state.screen = 3
 
 def cal():
+    st.write('のっと発散プログラム')
     st.write('inf_back_fact')
     st.write(st.session_state.inf)
     st.write(st.session_state.back)
 
-    st.write('じっさいのところどうでした?')
+    st.write('実際は何秒かかりましたか?')
     st.number_input('Input any number…', 0)
 
     st.write('スクショしてね')
@@ -91,8 +92,12 @@ def cal():
     right = 1 / st.session_state.u
 
     result = int(left * right)
+    minute = int(result / 60)
 
-    st.title('この列の平均待ち時間: ' + str(result) + '秒')
+    if result < 60:
+        st.title('この列の平均待ち時間: ' + str(result) + '秒')
+    else:
+        st.title('この列の平均待ち時間 約'+ str(minute) + '秒')
 
 def number():
     st.write('発散プログラム')
@@ -104,15 +109,17 @@ def number():
     st.write(st.session_state.inf)
     st.write(st.session_state.back)
 
-    st.write('じっさいのところどうでした?')
+    st.write('実際は何秒かかりましたか?')
     st.number_input('Input any number…', 0)
 
     st.write('スクショしてね')
 
     half = population / 2
     time = int(st.session_state.u * half)
+    minute = int(time / 60)
 
     st.title('この列の待ち時間:約'+ str(time) + '秒')
+    st.title('この列の待ち時間 約'+ str(minute) + '秒')
 
 def inf_aft():
     st.write('スタートボタンを押してから、3グループ分進んだらストップボタンを押してください。')
@@ -148,15 +155,16 @@ def num_aft():
     st.write(st.session_state.inf)
     st.write(st.session_state.back)
 
-    st.write('じっさいのところどうでした?')
     st.number_input('Input any number…', 0)
-
-    st.write('スクショしてね')
 
     half = population / 2
     time = int(st.session_state.u * half)
+    minute = int(time / 60)
 
-    st.title('この列の待ち時間 約'+ str(time) + '秒')
+    if time < 60:
+        st.title('この列の待ち時間 約'+ str(time) + '秒')
+    else:
+        st.title('この列の待ち時間 約'+ str(minute) + '分')
 
 if 'screen' not in st.session_state:
     st.session_state.screen = 0
