@@ -177,10 +177,6 @@ def num_aft():
     st.write('今何グループ並んでいますか?')
     population = st.number_input('Input any number…', 0)
 
-    st.write('inf_back_fact')
-    st.write(st.session_state.inf)
-    st.write(st.session_state.back)
-
     st.number_input('Input', 0)
 
     half = population / 2
