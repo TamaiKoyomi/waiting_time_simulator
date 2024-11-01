@@ -170,9 +170,6 @@ def back_aft():
             st.session_state.start_time = None
             st.session_state.back = elapsed
 
-            l = st.session_state.back / 180
-            st.session_state.u = st.session_state.inf / 180
-
             st.session_state.screen == 7
 
 def num_aft():
