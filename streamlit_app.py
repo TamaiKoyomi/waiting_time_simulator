@@ -5,7 +5,7 @@ st.title('待ち時間シミュレーター')
 
 def menu():
     
-    st.write('選んでください。')
+    st.write('何を知りたいですか?')
 
     col1 , col2 = st.columns(2)
 
@@ -147,6 +147,34 @@ def inf_aft():
             st.session_state.inf = elapsed
             st.session_state.screen = 6
 
+def back_aft():
+    st.write('スタートボタンを押してから、3グループ並んだらストップボタンを押してください。')
+
+    if 'start_time' not in st.session_state:
+        st.session_state.start_time = None
+        st.session_state.elapsed_time = 0
+
+    if st.button('スタート'):
+        st.session_state.start_time = time.time()
+        st.session_state.elapsed_time = 0
+    
+    if st.session_state.start_time is not None:
+        elapsed = st.session_state.elapsed_time + (time.time() - st.session_state.start_time)
+        st.write('3グループ目が並ぶまで、しばしお待ちください……')
+    else:
+        elapsed = st.session_state.elapsed_time
+
+    if st.button('ストップ'):
+        if st.session_state.start_time is not None:
+            st.session_state.elapsed_time += time.time() - st.session_state.start_time
+            st.session_state.start_time = None
+            st.session_state.back = elapsed
+
+            l = st.session_state.back / 180
+            st.session_state.u = st.session_state.inf / 180
+
+            st.session_state.screen == 7
+
 def num_aft():
     st.session_state.u = st.session_state.inf / 180
     
@@ -184,4 +212,6 @@ elif st.session_state.screen == 4:
 elif st.session_state.screen == 5:
     inf_aft()
 elif st.session_state.screen == 6:
+    back_aft()
+elif st.session_state.screen == 7:
     num_aft()
