@@ -176,9 +176,6 @@ def num_aft():
     
     st.write('今何グループ並んでいますか?')
     population = st.number_input('Input any number…', 0)
-
-    st.number_input('Input', 0)
-
     half = population / 2
     time = int(st.session_state.u * half)
     minute = int(time / 60)
