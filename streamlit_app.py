@@ -70,8 +70,6 @@ def cal():
     result = int(left * right)
     minute = int(result / 60)
 
-    st.title(result)
-
     if result < 60:
         st.title('この列の平均待ち時間: ' + str(result) + '秒')
     else:
