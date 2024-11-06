@@ -105,7 +105,7 @@ def number():
 if 'screen' not in st.session_state:
     st.session_state.screen = 0
 
-if st.session_state.screen == 1:
+if st.session_state.screen == 0:
     front_bef()
 elif st.session_state.screen == 2:
     back_bef()
